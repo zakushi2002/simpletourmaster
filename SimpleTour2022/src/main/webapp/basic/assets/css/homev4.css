@@ -1,0 +1,978 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+/* html {
+    font-family: "Hammersmith";
+} */
+
+#header {
+    height: 70px;
+    background-color: #ECFCFF;
+    /* background-image: linear-gradient(to-right,#8DB596,#8DB596); */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+#nav {
+    display: inline-block;
+    font-family: "Montserrat",sans-serif;
+    font-size: medium; 
+    font-weight: 600;
+    
+}
+#nav , .subnav {
+    list-style-type: none;
+    
+}
+/* inline là trên một hàng, block giữ lại tính chất khối */
+#nav > li {
+    display: inline-block;
+    
+    
+}
+#nav li {
+    position: relative;
+}
+/* Thuộc tính ăn theo li không theo a nữa */
+#nav > li > a {
+    color: black;
+    text-transform: uppercase;
+
+}
+#nav li a {
+    /* text-decoration bỏ gạch chân */
+    text-decoration: none;
+    line-height: 30px;
+    padding: 20px 30px;
+    display: block;
+    
+}
+#nav li:hover .subnav {
+    display: block;
+
+}
+#nav .subnav li:hover a,
+#nav > li:hover > a {
+    color:rgb(255, 255, 255);
+    background-color: #48c0f4;
+    
+}
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/* kế thừa inline sẽ kh kế thừa chiều cao chiều rộng */
+#nav .subnav a {
+    color: #000;
+    min-width: 160px ;
+    padding: 12px;
+    line-height: 38px;
+    
+}
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+/* LOGIN BUTTON */
+#wrap-nav .wrap-login-btn{
+    position: relative;
+    display: inline-block; 
+    left: 49%;
+    
+}
+.login-btn{
+    /* font-family: 'Lato', sans-serif;    */
+    font-weight: 600;
+    text-transform: uppercase;
+
+    height: 46px;
+    width: 90px;
+    border-radius: 12px;
+
+    right: 5%;
+    cursor: pointer;
+    padding: 20px auto;
+    text-align: center;
+    display: inline-block;
+    /* color: rgb(249, 245, 245); */
+    color: #000;
+    border: 2px ;
+    box-shadow: inset 2px 2px 2px 0px rgba(197, 193, 193, 0.5), 7px 7px 20px 0px rgb(0 0 0 / 10%), 4px 4px 5px 0px rgb(0 0 0 / 10%);
+            
+   }
+
+/* dua cursor vao nut login */
+.login-btn:hover {
+    /* color: rgb(43, 30, 30); */
+    transition: 0.6s;
+    color: white;
+    background-image: linear-gradient(to right,rgb(65, 151, 255),rgb(55, 209, 252));
+}
+/* phan dem dang sau nut login tao hieu ung  */
+.login-btn:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+.login-btn:active {
+    top: 2px;
+}
+/* END LOGIN BUTTON */
+
+/*SLIDE SHOW*/
+.slideshow{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    float: top;
+}
+.slideshow-item{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+}
+.slideshow-item img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 70%;
+    /* -webkit-animation: zoom 16s infinite;
+            animation: zoom 16s infinite; */
+}
+.slideshow .text-content {
+    font-family: "JetBrains",sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+
+    text-align: center;
+    color: #fff;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    
+    
+    
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.607);
+}
+/* nút booking */
+.slideshow .booking-bt{
+    font-family: "JetBrains",sans-serif;
+    font-size: medium;
+    font-weight: 600;
+
+    border-radius: 12px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    
+    color: #ffffff;
+    /* mau gradien nut booking */
+    background-image: -o-linear-gradient(315deg, #21ecff, #0084ff);
+    background-image: linear-gradient(135deg, #64dbff, #55bffc); 
+    
+    -webkit-box-align: center; 
+    
+        -ms-flex-align: center; 
+            align-items: center;
+    
+    text-decoration: none;
+
+    padding: 18px 4px;
+    position: static;
+    height: 90px;
+    width: 7em;
+    z-index: 2;
+}
+/* hieu ung cham vao nut booking */
+.slideshow .booking-bt:hover {
+    color: #fff;
+}
+
+.slideshow .booking-bt .book-bt {
+    
+    background: #404040;
+    border-radius: 12px;
+    padding: 14px;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+.slideshow .booking-bt:hover .book-bt {
+    background: transparent;
+}
+/*END SLIDE SHOW*/
+
+
+/*CONTACT*/
+.wrap-contact{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 30px;
+    height: 130px;
+}
+.contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.contact .button-contact {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    /* float: left;  */
+    margin: 3px 5px;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.button-contact .icon{
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    line-height: 50px;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    color: #000;
+}
+.button-contact .icon i{
+    font-size: 25px;
+    line-height: 50px;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.contact .button-contact:nth-child(1):hover .icon{
+    background: #2192FF;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+.contact .button-contact:nth-child(2):hover .icon{
+    background: #FFB72B;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+.contact .button-contact:nth-child(3):hover .icon{
+    background: #38E54D;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+/*END CONTACT*/
+/* CONTENT */
+#content{
+    position: relative;
+    color: rgb(140,185,155);
+    opacity: 2;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+/*BLOG*/
+
+.offer-blog {
+    position: relative;
+    margin-top: 90px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    
+}
+.wrap-offer-blog .content-offer-blog {
+    text-align: center;
+    font-size: medium;
+    font-family: "JetBrains",sans-serif;
+}
+
+.content-offer-blog .content-offer-blog-container .subheading{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #7acef5;
+    margin-bottom: 5px;
+    font-family: "JetBrains",sans-serif;
+
+}
+.content-offer-blog .content-offer-blog-container .text-heading{
+    font-size: 65px;
+    color: #33beff;
+    font-weight: bolder;
+    padding-bottom: 51px;
+    font-family: "JetBrains",sans-serif;
+
+}
+.blog-container{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    
+    @media (min-width: 30em) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (min-width: 60em) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.blog-container .card1 {
+    width: 300px;
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    /*sets up hover state*/
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}  
+.blog-container .card1:hover {
+    top: -5px;
+    box-shadow: 0 7px 8px rgba(0,0,0,0.4);
+}
+.blog-container .card1 article{
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.blog-container .card1 h1{
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+.blog-container .card1 p{
+    flex: 1;
+    line-height: 1.4;
+}
+.blog-container .card1 span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+}
+.blog-container .card1 .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+}
+.blog-container .item-1 {
+    @media (min-width: 60em) {
+      grid-column: 1 / span 2;
+      
+      h1 {
+        font-size: 24px;
+      }
+    }
+}
+.blog-container .card1 article h1 {
+    font-family: "JetBrains",sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.blog-container .card1 .date-submitted{
+    font-family: "JetBrains",sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+}
+.blog-container .card1 p{
+    font-family: "JetBrains",sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    padding-top: 10px;
+}
+/*END BLOG*/
+
+/*TOUR*/
+.offer-tour {
+    position: relative;
+    margin-top: px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+}
+.wrap-offer-tour .content-offer-tour {
+    font-family: "JetBrains",sans-serif;
+    font-size: medium;
+    position: relative;
+    margin-top: 90px;
+
+    text-align: center;
+}
+.content-offer-tour .content-offer-tour-container .subheading{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #7acef5;
+    margin-bottom: 5px;
+}
+.content-offer-tour .content-offer-tour-container .text-heading{
+    font-size: 65px;
+    font-weight: bolder;
+    color: #33beff;
+}
+/* quan li cac the */
+.wrap-offer-tour .sub-tour {
+    width: 1450px;
+    margin-top: 55px;
+    display: -ms-grid;
+    display: grid;
+    
+    -webkit-box-pack: center;
+    
+        -ms-flex-pack: center;
+    
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+
+    -ms-grid-columns: auto 7px auto 7px auto;
+
+    grid-template-columns: auto auto auto;
+    grid-gap: 7px;
+    row-gap: 40px;    
+
+}
+/* THE TOUR */
+.sub-tour .sub-tour-container {
+    position: relative;
+    display: inline-block;
+    
+    height: auto;
+    width: 330px;
+
+    background-color: #fff;
+
+    border: 0.5px solid #dddfe2;
+    border-radius: 7px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+
+    margin-right: 10px;
+    margin-left: 30px;
+    padding-bottom: 3px;
+}
+.sub-tour .sub-tour-container:hover {
+    top: -5px;
+    -webkit-box-shadow: 0px 7px 8px rgba(0,0,0,0.4);
+            box-shadow: 0px 7px 8px rgba(0,0,0,0.4);
+}
+.text-sub-tour{
+    margin-bottom: 10px;
+}
+/* hinh anh minh hoa tour */
+.text-sub-tour .background-text-sub-tour {
+    position: relative;
+	height: 280px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: rgba(white,.15);
+ 	background-blend-mode: overlay;
+	border-radius:8px 8px 0 0;
+    padding: 5px 5px 5px 5px;
+}
+.text-sub-tour .background-text-sub-tour .sale-ribbons{
+    font-size: large;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+
+    color: white;
+    background-color: rgb(242, 62, 62);
+
+    border-radius: 0px 0px 0px 0px;
+    text-align: center;
+    padding-top: 10px;
+    width: 120px;
+    height: 40px;
+
+    z-index: 1;
+    position: absolute;
+    right: 5px;
+
+
+}
+
+.text-sub-tour .background-text-sub-tour .sale-ribbons{
+    top: 0px;
+    right: 0px;
+    /* transform: rotate(45deg); */
+}
+/* NOI DUNG TOUR */
+.text-overlay {
+    font-family: 'system ui';
+	position: relative;
+	background: rgba(#fff, 0.6);
+	width: 100%;
+	height: auto;
+	top: 60%;
+	-webkit-box-shadow: 0 -2px 12px rgba(#000, 0.3);
+	        box-shadow: 0 -2px 12px rgba(#000, 0.3);
+	padding: 5px 7px;
+	-webkit-transition: all 450ms ease-in-out 0s;
+	-o-transition: all 450ms ease-in-out 0s;
+	transition: all 450ms ease-in-out 0s;
+	cursor: pointer;
+    margin:5px 2px 0px 2px;
+}
+
+.text-overlay h1{
+    color: rgb(0, 0, 0);
+	margin-top: 5px;
+    text-transform: uppercase;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: 700;
+
+
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.text-overlay .tour-date{
+    padding: 5px 0;
+    line-height: 10px;
+    color:#313131;
+
+    width: auto;
+
+	margin-top: 5px; 
+    text-transform: none;
+    font-family:'Hammersmith',sans-serif     ;
+    font-size: 15px;
+}
+
+.sub-tour .sub-tour-container .text-overlay h3{
+    color: #313131;
+	letter-spacing: 0.0225em;
+	width: auto;
+
+    padding:5px 0;
+
+    font-family: 'Hammersmith',sans-serif;
+    font-size: 15px;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.text-overlay i{
+    margin-right: 5px;
+}
+.text-overlay .fa-clock-o{
+    margin-right: 9px;
+}
+.text-overlay .fa-map-marker{
+    margin-right: 8px;
+    margin-left: 3px;
+}
+.text-overlay .fa-users{
+    margin-right: 3px;
+}
+
+.text-overlay a{
+    color: #000;
+	text-decoration: none;
+}
+.wrap-icon-holder-tour{
+    width: 100%;
+    right: 10px;
+}
+.icon-holder-tour {
+    color: rgb(255, 50, 50);
+    margin: 2px 0px 2px 7px;
+    
+    font-size: large;
+}
+
+.icon-holder-tour .credit-tour-price{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: dimgray;
+}
+.sale-percents {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+
+    color: red;
+
+    margin-left: 10px;
+}
+.icon-holder-tour .credit-tour-price-sale{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    color: rgb(255, 50, 50);
+  
+    margin-left: 27px;
+  }
+.fa-credit-card::before{
+    margin-right: 8px;
+}
+/*END TOUR*/
+
+/* END CONTENT */
+
+
+/* Begin Footer */
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.column{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.column-full{
+    width: 100%;
+}
+
+.column-fourth{
+    width: 25%;
+}
+
+.column-third{
+    width: 33.333333%;
+}
+
+.column-half{
+    width: 50%;
+}
+
+.clear{
+    clear: both;
+}
+
+#footer {
+    background-color: #dbdbdb;
+    height: 400px;
+    padding: 64px 16px;
+    text-align: center;
+}
+
+.footer-container.row.column-third.column {
+    padding: 5px 20px;
+}
+
+.social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    
+}
+
+.social ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 0;
+}
+
+.footer-list-content  {
+    margin-top: 22px;
+}
+
+.member-info ul li {
+    margin-bottom: 12px;
+    line-height: 24px;
+}
+
+.fabrand {
+    font-size: 32px;
+    padding: 0px 10px ;
+}
+
+#copyright{
+    background-color: #f9f9f9;
+}
+
+.copyright-container{
+    border-top: #000 solid 1px;
+    padding: 18px 0px 24px 20px;
+    margin: 0 20px;
+}
+/* End Footer */
+/*Ảnh du lịch*/
+#comment {
+    width: 1012px;
+    height: 478px;
+    margin:0px auto;
+    margin-top:173px;
+    margin-bottom: 50px;
+}
+
+#comment h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size:3em;
+    color:#626a67;
+    font-family: "JetBrains",sans-serif;
+    font-weight: 600;
+
+}
+
+
+#comment-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 400px;
+    list-style: none;
+    overflow: hidden;
+}
+
+#list-comment {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    transition:0.5s;
+}
+
+#list-comment .item {
+    width: 100%;
+    height: 100%;
+    background:#7acef5;
+    border-radius: 20px;
+    padding-top:50px;
+}
+
+#list-comment .item .avatar {
+    text-align: center;
+    margin-top:13px;
+}
+
+#list-comment .item .stars {
+    display: flex;
+    margin:0px auto;
+    width: 50%;
+    margin-top:32px;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-comment .item .name {
+    text-align: center;
+    font-weight: bold;
+    color:#fff;
+    font-family: "JetBrains",sans-serif;
+
+}
+
+#list-comment .item .text {
+    padding:20px 50px;
+    color:#fff;
+    font-family: "JetBrains",sans-serif;
+    
+   
+}
+/*Sale*/
+#saleoff {
+    width: 100%;
+    display: flex;
+    height: 322px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#saleoff .box-left ,#saleoff .box-right {
+    width: 50%;
+}
+#saleoff .box-left {
+    background:#3e413e;
+    text-align: center;
+    min-height: 322px;
+}
+
+#saleoff .box-left h1 {
+    padding-top:100px;
+    font-family: "JetBrains",sans-serif;
+
+}
+#saleoff .box-left span:nth-child(1)
+{
+    color:#fff;
+    font-size:50px;
+}
+
+#saleoff .box-left span:nth-child(2)
+{
+    color:orange;
+    font-size:128px;
+}
+
+#saleoff .box-right img{
+    width: 100%;
+    height: 322px;
+}
+/*Banner*/
+#banner {
+    width: 100%;
+    height: 463px;
+    /* margin-top:40px; */
+    display: flex;
+    padding:0px 133px;
+    position:relative;
+}
+
+#banner .box-left ,#banner .box-right {
+    width: 50%;
+}
+
+#banner  .box-left h2 {
+    font-size:80px;
+    margin-top:30%;
+    color:#fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: "JetBrains",sans-serif;
+
+}
+
+#banner .box-left p {
+    color:#fff;
+    font-size: 40px;
+}
+
+#banner .box-left button {
+    width: 191px;
+    height: 40px;
+    margin-top:41px;
+    background:#1d1a1a;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-weight: bold;
+    border-radius: 20px;
+    transition:0.4s;
+}
+
+#banner .box-left button:hover {
+    background:#209cff;
+}
+
+#banner .box-right {
+    /* margin-top:10%; */
+    padding-left:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .box-right img {
+    margin:0px 10px;
+    animation :animation 3s infinite linear; 
+}
+
+
+#banner .box-right img:nth-child(1)
+{
+    animation-delay: 0.5s;
+}
+#banner .box-right img:nth-child(2)
+{
+    
+    animation-delay: 1s;
+}
+
+@keyframes animation {
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+

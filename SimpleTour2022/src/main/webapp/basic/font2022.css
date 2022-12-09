@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Hammersmith";
+    src: url("/basic/assets/fonts/HammersmithOne-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Montserrat-Italic";
+    src: url("/basic/assets/fonts/Montserrat-Italic-VariableFont_wght.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("/basic/assets/fonts/Montserrat-VariableFont_wght.ttf") format('truetype');
+}
+@font-face {
+    font-family: "JetBrains", sans-serif;
+    src: url("/basic/assets/fonts/JetBrains-Mono-Bold/JetBrainsMono-Regular.ttf"),format("truetype");
+}
