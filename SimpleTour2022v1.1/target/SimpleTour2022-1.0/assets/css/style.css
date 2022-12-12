@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "JetBrains", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.7;
+    color: #777;
+    padding: 70px;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom ,rgba(198, 195, 121, 0.6), rgba(40,180,131,0.6)) ,
+     url('./assets/img/slider/photo-1493246507139-91e8fad9978e.avif');
+    background-size: cover;
+    background-position: bottom;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+@font-face {
+    font-family: 'JetBrains';
+    src: url(/assets/fonts/JetBrains-Mono-Bold/JetBrainsMono-Regular.ttf),format("truetype");
+}
+
+.logo{
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    max-width: 30px;
+    max-height: 80px;
+}
+.logo img{
+    height: 100px;
+}
+
+.container{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.heading{
+    color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+
+.heading-title{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 33px;
+    animation-name: hieu-ung-di-chuyen-sang-trai;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; 
+}
+
+.heading-sub{
+    display: block;
+    font-size: 20px;
+    letter-spacing: 12px;
+    animation-name: hieu-ung-di-chuyen-sang-phai;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes hieu-ung-di-chuyen-sang-trai{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes hieu-ung-di-chuyen-sang-phai{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn:link,
+.btn-visited{
+    text-decoration: none;
+    padding: 15px 40px;
+    display:inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+
+}
+.btn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.btn:active{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.btn-white{
+    background-color: #fff;
+    color: #777;
+}
+
+

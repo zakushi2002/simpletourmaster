@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: 'JetBrains', sans-serif;
+}
+#header {
+    height: 70px;
+    background-color: #ECFCFF;
+    /* background-image: linear-gradient(to-right,#8DB596,#8DB596); */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+#nav {
+    display: inline-block;
+    font-family: "Montserrat",sans-serif;
+    font-size: medium; 
+    font-weight: 600;
+    
+}
+#nav , .subnav {
+    list-style-type: none;
+    
+}
+/* inline là trên một hàng, block giữ lại tính chất khối */
+#nav > li {
+    display: inline-block;
+    
+    
+}
+#nav li {
+    position: relative;
+}
+/* Thuộc tính ăn theo li không theo a nữa */
+#nav > li > a {
+    color: black;
+    text-transform: uppercase;
+
+}
+#nav li a {
+    /* text-decoration bỏ gạch chân */
+    text-decoration: none;
+    line-height: 30px;
+    padding: 20px 30px;
+    display: block;
+    
+}
+#nav li:hover .subnav {
+    display: block;
+
+}
+#nav .subnav li:hover a,
+#nav > li:hover > a {
+    color:rgb(255, 255, 255);
+    background-color: #48c0f4;
+    
+}
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/* kế thừa inline sẽ kh kế thừa chiều cao chiều rộng */
+#nav .subnav a {
+    color: #000;
+    min-width: 160px ;
+    padding: 12px;
+    line-height: 38px;
+    
+}
+#nav .nav-arrow-down {
+    font-size: 14px;
+}
+/* LOGIN BUTTON */
+#wrap-nav .wrap-login-btn{
+    position: relative;
+    display: inline-block; 
+    left: 49%;
+    
+}
+.login-btn{
+    /* font-family: 'Lato', sans-serif;    */
+    font-weight: 600;
+    text-transform: uppercase;
+
+    height: 46px;
+    width: 90px;
+    border-radius: 12px;
+
+    right: 5%;
+    cursor: pointer;
+    padding: 20px auto;
+    text-align: center;
+    display: inline-block;
+    /* color: rgb(249, 245, 245); */
+    color: #000;
+    border: 2px ;
+    box-shadow: inset 2px 2px 2px 0px rgba(197, 193, 193, 0.5), 7px 7px 20px 0px rgb(0 0 0 / 10%), 4px 4px 5px 0px rgb(0 0 0 / 10%);
+            
+   }
+
+/* dua cursor vao nut login */
+.login-btn:hover {
+    /* color: rgb(43, 30, 30); */
+    transition: 0.6s;
+    color: white;
+    background-image: linear-gradient(to right,rgb(65, 151, 255),rgb(55, 209, 252));
+}
+/* phan dem dang sau nut login tao hieu ung  */
+.login-btn:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+.login-btn:active {
+    top: 2px;
+}
+/* END LOGIN BUTTON */
+
+/* FORM */
+.content {
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.form .title-page {
+    color: #009DAE;
+
+    font-weight: 700;
+    font-size: 2em;
+    font-family: "JetBrains", sans-serif;
+
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #71DFE7;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.content .form {
+    margin: 0 auto;
+}
+.form .payment-form{
+    margin: 0 auto;
+}
+.form .input-form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form .input-form input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    margin-top: 3px;
+}
+.form .input-form span{
+    margin-top: 10px;
+    font-family: "JetBrains",sans-serif;
+    text-decoration: none;
+}
+/* quantity */
+.person-quantity *{
+    display:inline-block;}
+.person-quantity{
+    margin-top:25px;
+    margin-bottom:25px;}
+.person-quantity-label{
+    text-transform:uppercase;}
+#person-quantity-input{
+    background-color: #eee;
+    border: none; width:2.5em; 
+    text-align: center;}
+.person-quantity-subtract, .person-quantity-add{
+    margin-left: 20px; 
+    padding-left:1px; 
+    padding-right: 1px;}
+.person-quantity-subtract{
+    margin-right:20px;}  
+/* end quantity */
+
+/* METHOD PAY */
+.payment-method{
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.payment-method .payment-title{
+    color: #009DAE;
+
+    font-weight: 700;
+    font-size: 2em;
+    font-family: "JetBrains", sans-serif;
+
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #71DFE7;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.method .method-detail{
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    border: 1px solid black;
+
+    margin: 15px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.method-detail img{
+    position: absolute;
+    margin: 3px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    right: 10px;
+}
+.method-detail .method-brand{
+    position: absolute;
+    margin: 20px;
+    left: 0px;
+
+    font-size: medium;
+    font-family: "JetBrains",sans-serif;
+
+    display: inline-block;
+}
+
+
+/* END METHOD PAY *//* END FORM */
+
+/* BUTTON */
+.button-done{
+    align-items: center;
+    text-align: center;
+}
+.button-done .done{
+    width: 300px;
+    height: 40px;
+
+    font-family: "JetBrains",sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    border-color: #ebebeb;
+    background-color: #009DAE;
+    color: white;
+}
+.button-done .done:hover{
+    background-color:white ;
+    color: #009DAE;
+}
+/* END BUTTON */
+
+/* FOOTER  */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.column{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.column-full{
+    width: 100%;
+}
+
+.column-fourth{
+    width: 25%;
+}
+
+.column-third{
+    width: 33.333333%;
+}
+
+.column-half{
+    width: 50%;
+}
+
+.clear{
+    clear: both;
+}
+
+#footer {
+    margin-top: 50px;
+    background-color: #dbdbdb;
+    height: 400px;
+    padding: 64px 16px;
+    text-align: center;
+}
+
+.footer-container.row.column-third.column {
+    padding: 5px 20px;
+}
+
+.social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    
+}
+
+.social ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 0;
+}
+
+.footer-list-content  {
+    margin-top: 22px;
+}
+
+.member-info ul li {
+    margin-bottom: 12px;
+    line-height: 24px;
+}
+
+.fabrand {
+    font-size: 32px;
+    padding: 0px 10px ;
+}
+
+#copyright{
+    background-color: #f9f9f9;
+}
+
+.copyright-container{
+    border-top: #000 solid 1px;
+    padding: 18px 0px 24px 20px;
+    margin: 0 20px;
+}
+/* End Footer */

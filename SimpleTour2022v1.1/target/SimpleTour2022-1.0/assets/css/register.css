@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: 'JetBrains', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+/* Phần hình ảnh */
+.img-bg {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.img-bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+/* Phần nội dung */
+.content {
+    width: 50%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+            flex-direction: column;
+}
+.content .logo{
+  position: static;
+  
+  width: 100%;
+}
+.logo img{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.content .form {
+    width: 50%;
+}
+.form .title-page {
+    color: #009DAE;
+
+    font-weight: 700;
+    font-size: 2em;
+    font-family: "JetBrains", sans-serif;
+
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #71DFE7;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+.form .input-form{
+    margin-bottom: 20px;
+}
+.form .input-form input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
+
+    margin-top: 3px;
+}
+.input-form input[type="submit"]{
+    background: #71DFE7;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+                0 2px 2px rgba(0,0,0,0.12),
+                0 4px 4px rgba(0,0,0,0.12),
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
+.input-form input[type="submit"]:hover{
+    background: #009DAE;
+}
+.form .input-form p{
+  color: #607d8b;
+}
+.form .input-form p a{
+  color: #71DFE7;
+  margin-left: 10px;
+}
+.form .input-form span{
+  font-family: "JetBrains",sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-left: 3px;
+}
+/*Password*/
+.indicator{
+	height: 10px;
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	display: none;
+  }
+.indicator span{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: lightgrey;
+	border-radius: 5px;
+  }
+.indicator span:nth-child(2){
+	margin: 0 3px;
+  }
+.indicator span.active:before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+  }
+  .indicator span.weak:before{
+	background-color: #ff4757;
+  }
+  .indicator span.medium:before{
+	background-color: orange;
+  }
+  .indicator span.strong:before{
+	background-color: #23ad5c;
+  }
+.text{
+	font-size: 20px;
+	font-weight: 500;
+	display: none;
+	margin-bottom: -10px;
+	text-align: center;
+  }
+.text.weak{
+	color: #ff4757;
+  }
+.text.medium{
+	color: orange;
+  }
+.text.strong{
+	color: #23ad5c;
+}
+.register_form #username_error,
+.register_form #pass_error,
+.register_form #birthday_error,
+.register_form #conpass_error,
+.register_form #email_error,
+.register_form #phone_error{
+	/* margin-top: 5px; */
+    margin-bottom: 10px;
+	width: 100%;
+	font-size: 18px;
+	color: #C62828;
+	background: rgba(255,0,0,0.1);
+	text-align: center;
+	padding: 8px 8px;
+	border-radius: 30px;
+	border: 1px solid #EF9A9A;
+	display: none;
+}
