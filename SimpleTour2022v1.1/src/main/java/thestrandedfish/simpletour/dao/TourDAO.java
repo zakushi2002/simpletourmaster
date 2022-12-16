@@ -16,5 +16,6 @@ public interface TourDAO {
 	void insert(Tour tour);
 	void delete(int idTour);
 	void edit(Tour tour);
+	void update(Tour tour);
 	List<Tour> getTourBySearch(String startingGate, String titleTour, Date dateStart, int travelTime, double startPrice, double endPrice);
 }

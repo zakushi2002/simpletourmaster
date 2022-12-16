@@ -6,6 +6,7 @@ import thestrandedfish.simpletour.model.Tour;
 public interface TourService {
 	boolean createTour(String title, int categoryID, String content, String schedule, double price, Date start, Date end, int maxSeat, String startingGate, String pathPhotoTour, double saleOff, int status);
 	boolean editTour(int idTour, String title, int categoryID, String content, String schedule, double price, Date start, Date end, int maxSeat, String startingGate, String pathPhotoTour, double saleOff, int status);
+	boolean updateTour(int stockSeat, int amount, int idTour);
 	int countAllActive();
 	List<Tour> getTopTour();
 	List<Tour> getAllTour();

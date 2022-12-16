@@ -456,5 +456,24 @@ public class TourDAOImplement implements TourDAO{
 		}
 		return list;
 	}
+	@Override
+	public void update(Tour tour) {
+		String sql ="update simpletour_master.tour set stockSeat = ?, amount = ? where idTour = ?;";
+		try 
+		{
+			conn = new DBConnect().getConnection();
+			ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, tour.getStockSeat());
+			ps.setInt(2, tour.getAmount());
+			ps.setInt(3, tour.getIdTour());
+			ps.executeUpdate();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
 
 }

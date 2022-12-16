@@ -83,6 +83,12 @@ public class Tour implements Serializable{
 		this.saleOff = saleOff;
 		this.statusTour = statusTour;
 	}
+	public Tour(int idTour, int amount, int stockSeat) {
+		super();
+		this.idTour = idTour;
+		this.amount = amount;
+		this.stockSeat = stockSeat;
+	}
 	public Tour()
 	{
 		super();

@@ -61,5 +61,12 @@ public class TourServiceImplement implements TourService{
 		
 		return tourDAO.getTourBySearch(startingGate, titleTour, dateStart, travelTime, startPrice, endPrice);
 	}
+	@Override
+	public boolean updateTour(int stockSeat, int amount, int idTour) {
+		// TODO Auto-generated method stub
+		
+		tourDAO.update(new Tour(idTour, amount, stockSeat));
+		return true;
+	}
 	
 }

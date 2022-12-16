@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,19 +15,24 @@ import javax.servlet.http.HttpSession;
 import thestrandedfish.simpletour.model.Account;
 import thestrandedfish.simpletour.model.Cart;
 import thestrandedfish.simpletour.model.CartItem;
+import thestrandedfish.simpletour.model.Tour;
 import thestrandedfish.simpletour.service.CartItemService;
 import thestrandedfish.simpletour.service.CartService;
+import thestrandedfish.simpletour.service.TourService;
 import thestrandedfish.simpletour.service.implement.CartItemServiceImplement;
 import thestrandedfish.simpletour.service.implement.CartServiceImplement;
+import thestrandedfish.simpletour.service.implement.TourServiceImplement;
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns= {"/orderuser"})
 public class OrderController extends HttpServlet{
 	CartService cartService;
 	CartItemService cartItemService;
+	TourService tourService;
 	@Override
 	public void init() throws ServletException {
 		cartService = new CartServiceImplement();
 		cartItemService = new CartItemServiceImplement();
+		tourService = new TourServiceImplement();
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,10 +58,9 @@ public class OrderController extends HttpServlet{
 			// lay dang nhap
 			Account buyer = (Account) session.getAttribute("account");
 			cart.setAccount(buyer);
-			//XEM THEM O LOP BILLDAO, CACH TRA VE ID TU GEN O SQL
-			// save bill trc de lay id
+			//XEM THEM O LOP CartDAO
+			// save Cart trc de lay id
 			cartService.insert(cart);
-			// Tim mat hang
 			double total = 0;//tinh tong gia
 			
 			//lap cac phan tu trong map
@@ -65,14 +68,20 @@ public class OrderController extends HttpServlet{
 			{
 				CartItem cartItem = entry.getValue();
 			
-				cartItem.setIdCart(cart.getIdCart());// set bill id vao day
+				cartItem.setIdCart(cart.getIdCart());// set cart id vao day
 				//luu lai cac mat hang
 				cartItemService.insert(cartItem);
 				// tinh tong gia
 				total += cartItem.getQuantity() * cartItem.getUnitPrice();
+				// Cập nhật độ hot - amount - seat
+				String tourid = String.valueOf(cartItem.getTour().getIdTour());
+				Tour editTour = tourService.getTourByID(tourid);
+				editTour.setStockSeat(editTour.getStockSeat()+ cartItem.getQuantity());
+				editTour.setAmount(editTour.getAmount() + cartItem.getQuantity());
+				tourService.updateTour(editTour.getStockSeat(), editTour.getAmount(), editTour.getIdTour());
 			}
 				
-			///cap nhat lai bill de co tong gia tien
+			///cap nhat lai cart de co tong gia tien
 			cart.setTotalPay(total);
 			cartService.edit(cart);
 			// chuyen ve trang thanh cong
